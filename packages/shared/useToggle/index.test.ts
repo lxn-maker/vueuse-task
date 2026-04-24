@@ -94,4 +94,13 @@ describe('useToggle', () => {
     expect(toggle('ON')).toBe('ON')
     expect(toValue(status)).toBe('ON')
   })
+
+  it('should normalize non-boolean initial values to boolean', () => {
+    expect(useToggle(1 as any)[0].value).toBe(true)
+    expect(useToggle('yes' as any)[0].value).toBe(true)
+    expect(useToggle(0 as any)[0].value).toBe(false)
+    expect(useToggle('' as any)[0].value).toBe(false)
+    expect(useToggle(null as any)[0].value).toBe(false)
+    expect(useToggle(undefined as any)[0].value).toBe(false)
+  })
 })
