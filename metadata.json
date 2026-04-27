@@ -1,0 +1,7 @@
+{
+  "base_image": "node:20",
+  "architecture": "x86_64",
+  "language": "JavaScript",
+  "package_manager": "pnpm",
+  "test_command": "pnpm test packages/shared/useToggle/index.test.ts"
+}

@@ -1,0 +1,11 @@
+{
+  "repo": "https://github.com/lxn-maker/vueuse-task",
+  "base_commit": "acf182ec",
+  "problem_statement": "useToggle should normalize non-boolean initial values to boolean according to truthy/falsy rules while keeping existing API behavior unchanged.",
+  "FAIL_TO_PASS": [
+    "packages/shared/useToggle/index.test.ts::should normalize non-boolean initial values to boolean"
+  ],
+  "PASS_TO_PASS": [
+    "packages/shared/useToggle/index.test.ts"
+  ]
+}

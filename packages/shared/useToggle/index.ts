@@ -32,7 +32,11 @@ export function useToggle(
   } = options
 
   const valueIsRef = isRef(initialValue)
-  const _value = shallowRef(initialValue) as ShallowRef<boolean>
+  const hasCustomValues = 'truthyValue' in options || 'falsyValue' in options
+
+  const _value = valueIsRef
+    ? initialValue as ShallowRef<boolean>
+    : shallowRef(hasCustomValues ? initialValue : Boolean(initialValue)) as ShallowRef<boolean>
 
   function toggle(value?: boolean) {
     // has arguments
